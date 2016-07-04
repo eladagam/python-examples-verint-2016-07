@@ -4,19 +4,19 @@ Elad Agam
 Print all the input line by line - backwards
 """
 
-Input = []
+lines = []
 while True:
 	print "Enter a line"
 	line = raw_input()
 	if not line == "":
-		Input.append(line)
+		lines.append(line)
 	else:
 		break
 
 
-numoflines =(len(Input)) 
+numoflines =(len(lines)) 
 for i in range(numoflines):
-	print Input.pop()
+	print lines[numoflines-i-1]
 
 
 
