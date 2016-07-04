@@ -1,7 +1,19 @@
 """
-Write a program that randomizes a number
-and prints the sum total of its digits.
-For example if the number was: 2345
-The result should be: 14
+Elad Agam
+03 - Rand a number (1-10000) and return the sum of its digits
 """
+
+from random import randint
+
+#init sum
+sum = 0 
+
+rand = randint(1, 10000)
+print "Rand = {R}".format(R=rand)
+for num in str(rand):
+	sum = sum + int(num)
+
+print "Sum = {Summary}".format(Summary=sum)
+
+
 
