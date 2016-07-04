@@ -9,18 +9,21 @@ num1 = randint(1, 10)
 num2 = randint(1, 10)
 
 print "Randomized {n1} , {n2}".format(n1=num1,n2=num2)
-
+n1 = num1
+n2 = num2
+lcm = 0
 if num1 > num2:
-    greater = num1
+    max = num1
+    min = num2 
 else:
-    greater = num2
- 
-while True:
-    if greater % num1 == 0  and  greater % num2 == 0:
-	    lcm = greater
-	    break
-    greater = greater + 1
+    max = num2
+    min = num1
 
+for i in range(1,max+1):
+    if (min*i)%max == 0:
+	    lcm = min*i
+	    break
+        
 print "LCM is {n1}".format(n1=lcm)
 
 
