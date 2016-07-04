@@ -5,14 +5,14 @@ Elad Agam
 
 from random import randint
 
-num1 = randint(1, 100)
+random = randint(1, 100)
 
 while True:
-    print "Try to guess my number:"
-    num2 = int(raw_input())
-    if num1 > num2 or num2 % 7 == 0:
+    
+    input = int(raw_input('Try to guess my number:'))
+    if random > input:
         print "Mine is Greater"
-    elif num1 < num2:
+    elif random < input:
 	    print "Mine is Smaller"
     else:
 	    print "Bingo"
