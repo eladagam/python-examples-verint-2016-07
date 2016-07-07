@@ -1,4 +1,10 @@
-""" Write a program that takes a count
-from sys.argv import and prints "Hello Python"
-count times
 """
+Elad Agam - Modules
+Get command line arg x - print "Hello Python" x times 
+"""
+
+import sys
+
+
+for time in range(int(sys.argv[1])):
+    print "Hello Python"
