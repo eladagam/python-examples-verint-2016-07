@@ -1,10 +1,19 @@
-""" Write a program that reads 2 numbers from sys.argv
-and prints their sum.
-Bonus: Print error messages for invalid inputs.
-
-To print error messages we'll have to use a concept not yet learned in the
-course, and which will only be presented later: Exceptions.
-We'll tap into python's error handling and change its default
-error message to something more meaningful.
 """
+Elad Agam - Modules
+Get command line arg x and y- print the sum of both  
+"""
+
+import sys
+
+
+
+if (len(sys.argv) != 3):
+    print ('Error - need to send two args')
+    sys.exit()
+
+try: 
+    print "SUM: " + str(int(sys.argv[1])+int(sys.argv[2]))
+except ValueError:
+    print ('Error - need to send two numbers')
+    
 
