@@ -1,4 +1,9 @@
-""" Write a program that reads 2 numbers from sys.argv
-and prints their sum.
+"""
+Elad Agam - Modules
+Get command line arg x and y- print the sum of both  
 """
 
+import sys
+
+
+print "SUM: " + str(int(sys.argv[1])+int(sys.argv[2]))
