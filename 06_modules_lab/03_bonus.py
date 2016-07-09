@@ -1,13 +1,26 @@
-""" Write a program that searches current working directory
-for files larger than 1MB. Every time you find such a file print
-its name to the user.
-
-- When the program finds a large file. It should ask the user
-  a message asking if she wants to delete it, and delete the
-  file if requested
-
-- Take threshold and path as command line arguments
-
-Bonus: Use argparse module to parse command line arguments
 """
+Elad Agam - Modules
+03 go over all files in current folder recursively  print names of files greater that 1M
+"""
+
+import sys
+import argparse
+import os
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-p', '--path', default='.')
+parser.add_argument('-s', '--fileSize', default=1)
+args = vars(parser.parse_args())
+
+path = args['path']
+size = int(args['fileSize'])
+
+for folder, subs, files in os.walk(path):
+    for filename in files:
+	    statinfo = os.stat(os.path.join(folder, filename))
+	    if statinfo.st_size > 1000000:
+		    print "found file: "+os.path.join(folder, filename)+" size="+str(statinfo.st_size)
+		    needToDeletput = raw_input('Delete it? (y/n)')
+		    
+
 
