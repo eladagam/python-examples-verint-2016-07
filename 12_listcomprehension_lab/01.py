@@ -1,8 +1,7 @@
 """
-Use range() and list comprehension to get
-the list of all lowercase english letters
-Hint: look for chr() and ord()
+Elad Agam - List comprehansion 
+01 - Build a list [a-z]
 """
 
-
-
+letters  = [chr(letter) for letter in range(97,123)]
+print letters
