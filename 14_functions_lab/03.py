@@ -1,5 +1,13 @@
 """
-Write a function that calculates the sum
-of the 10th digit from all arguments passed to it
+Elad Agam - Functions
+03 - Sum the second digit for all inputs
 """
 
+def f(*nums):
+    sum=0
+    for num in nums:
+         sum = sum+ int(str(num)[-2])
+    print sum
+
+
+f(1232,765656,2123)
