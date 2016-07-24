@@ -1,15 +1,26 @@
 """
-Write a python program that takes a CSV file
-reads it line by line and prints each line
-with first and second columns reversed.
-
-Sample input:
-    Shana,Sargent,shanasargent@isoswitch.com
-    Witt,Hampton,witthampton@zaphire.com
-    Morgan,Grant,morgangrant@lotron.com
-
-Sample output:
-    Sargent,Shana,shanasargent@isoswitch.com
-    Hampton,Witt,witthampton@zaphire.com
-    Grant,Morgan,morgangrant@lotron.com
+Elad Agam - Regex
+03 - Replace first and second columns in CSV
 """
+
+import re
+import argparse
+import os
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-s', '--source')
+args = vars(parser.parse_args())
+
+workingDir =  os.getcwd()
+
+source = os.path.join(workingDir, args['source'])
+
+
+
+
+with open(source,"r") as fin:
+    for line in fin:
+        print  re.sub(r'^(\w+),(\w+),', r'\2,\1,', line)        
+        #I can't understand why the below did not work!!!
+        #print  re.sub(r'^(\w+),(\w+),', lambda m:m.group(1)+","+m.group(0), line)
