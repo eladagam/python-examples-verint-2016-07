@@ -8,8 +8,8 @@ class Summer(object):
     def __init__(self):
         self.sum = 0
     
-    def add(self, number1,number2=0):
-        self.sum = self.sum + number1 + number2
+    def add(self, *numbers):
+        self.sum = self.sum + sum(numbers)
 
     def total(self):
         return str(self.sum)
@@ -19,7 +19,7 @@ class Summer(object):
 s = Summer()
 t = Summer()
 
-s.add(10, 20)
+s.add(10, 20,40)
 t.add(50)
 s.add(30)
 
