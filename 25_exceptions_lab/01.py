@@ -8,13 +8,19 @@ while True:
     numStr = raw_input('Enter a number:')
     
     try:
-        num = float(numStr)
-    except ValueError:
-        print ("%s is not a number\n" % numStr)
+        print math.sqrt(float(numStr))
+
+    except ValueError as e:
+        if e.message == 'math domain error':
+            print ("%s Number is not possitive\n" %numStr)
+        else:
+            print ("%s is not a number\n" % numStr)
+   
         exit(0)
     
     
-    if num < 0:
-        raise ValueError("Expected parameter >= 0, Got: %d" % num)
 
-    print math.sqrt(num)
+    
+    
+
+    
