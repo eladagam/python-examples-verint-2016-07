@@ -1,14 +1,19 @@
 """
 Elad Agam - Exceptions 
-02 - open file and print number of lines - assert if not exists 
+02 - open file and print number of lines - assert if fail to open
 """
 import os
 import sys 
 
+sum=0
 
-if not os.path.isfile(sys.argv[1]):
-    raise ValueError("%s does not exist\n" % fin)
+try:
 
-with open(sys.argv[1],"r") as fin:
-    print sum(1 for _ in fin)
+    with open(sys.argv[1],"r") as fin:
+        for _ in fin:
+            sum=sum+1
+except Exception as e:
+    print  ("Sorry, file %s not found" % sys.argv[1])
+    exit(0)
 
+print sum
